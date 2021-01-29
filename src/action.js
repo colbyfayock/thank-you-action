@@ -18,7 +18,7 @@ async function run() {
   }
 
   const randomPos = Math.round(Math.random() * 1000);
-  const url = `https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&pos=${randomPos}&limit=1`
+  const url = `https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&pos=${randomPos}&limit=1&contentfilter=high`
 
   console.log(`Searching Tenor: ${url}`)
 
