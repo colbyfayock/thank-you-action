@@ -3,6 +3,9 @@ description: 'Demo for tutorial'
 author: 'Colby Fayock <hello@colbyfayock.com>'
 
 inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token'
+    required: true
   TENOR_TOKEN:
     description: 'Tenor API token'
     required: true
@@ -14,5 +17,5 @@ inputs:
     default: 'thank you'
 
 runs:
-  using: 'node14'
+  using: 'node12'
   main: 'dist/index.js'
