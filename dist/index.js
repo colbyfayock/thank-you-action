@@ -5917,7 +5917,7 @@ async function run() {
 
   const response = await fetch(`https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&key=${TENOR_TOKEN}&limit=1`);
   const { results } = await response.json();
-  const gifUrl = results[0]?.url;
+  const gifUrl = results[0].url;
 
   console.log(`Found gif from Tenor: ${gifUrl}`);
 
