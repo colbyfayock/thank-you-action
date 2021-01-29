@@ -18,13 +18,13 @@ async function run() {
   }
 
   const randomPos = Math.round(Math.random() * 1000);
-  const url = `https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&pos=${randomPos}&limit=1&contentfilter=high`
+  const url = `https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&pos=${randomPos}&limit=1&media_filter=minimal&contentfilter=high`
 
   console.log(`Searching Tenor: ${url}`)
 
   const response = await fetch(`${url}&key=${TENOR_TOKEN}`);
   const { results } = await response.json();
-  const gifUrl = results[0].media[0].gif.url;
+  const gifUrl = results[0].media[0].tinygif.url;
 
   console.log(`Found gif from Tenor: ${gifUrl}`);
 
@@ -39,13 +39,11 @@ async function run() {
 
   const octokit = github.getOctokit(GITHUB_TOKEN)
 
-  const comment = octokit.issues.createComment({
+  await octokit.issues.createComment({
     ...context.repo,
     issue_number: pull_request.number,
     body: `${message}\n\n<img src="${gifUrl}" alt="${searchTerm}" />`
   });
-
-  console.log('comment', comment);
 }
 
 run().catch(e => core.setFailed(e.message));
