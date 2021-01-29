@@ -3,6 +3,9 @@ description: 'Demo for tutorial'
 author: 'Colby Fayock <hello@colbyfayock.com>'
 
 inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token'
+    required: true
   TENOR_TOKEN:
     description: 'Tenor API token'
     required: true
