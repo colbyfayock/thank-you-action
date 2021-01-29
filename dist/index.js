@@ -5930,7 +5930,7 @@ async function run() {
 
   console.log(`Found pull request: ${pull_request.number}`);
 
-  const octokit = new github.GitHub(GITHUB_TOKEN);
+  const octokit = github.getOctokit(GITHUB_TOKEN)
 
   const comment = octokit.issues.createComment({
     ...context.repo,
