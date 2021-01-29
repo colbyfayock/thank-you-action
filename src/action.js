@@ -17,7 +17,8 @@ async function run() {
     throw new Error('Invalid GITHUB_TOKEN: did you forget to set it in your action config?');
   }
 
-  const response = await fetch(`https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&key=${TENOR_TOKEN}&limit=1`);
+  const randomPos = Math.random(Math.round(Math.random() * 1000));
+  const response = await fetch(`https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&pos=${randomPos}&key=${TENOR_TOKEN}&limit=1`);
   const { results } = await response.json();
   const gifUrl = results[0].media[0].gif.url;
 
