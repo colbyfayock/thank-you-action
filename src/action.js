@@ -19,7 +19,7 @@ async function run() {
 
   const response = await fetch(`https://api.tenor.com/v1/search?q=${encodeURIComponent(searchTerm)}&key=${TENOR_TOKEN}&limit=1`);
   const { results } = await response.json();
-  const gifUrl = results[0]?.url;
+  const gifUrl = results[0].media[0].gif.url;
 
   console.log(`Found gif from Tenor: ${gifUrl}`);
 
@@ -32,7 +32,7 @@ async function run() {
 
   console.log(`Found pull request: ${pull_request.number}`);
 
-  const octokit = new github.GitHub(GITHUB_TOKEN);
+  const octokit = github.getOctokit(GITHUB_TOKEN)
 
   const comment = octokit.issues.createComment({
     ...context.repo,
