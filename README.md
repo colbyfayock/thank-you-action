@@ -22,3 +22,5 @@ jobs:
           TENOR_TOKEN: ${{secrets.TENOR_TOKEN}}
 ```
 * You're welcome!
+
+https://spacejelly.dev/posts/how-to-create-a-custom-github-action-with-node-javascript/
