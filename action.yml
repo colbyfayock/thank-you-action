@@ -1,6 +1,6 @@
 name: 'PR Thank You Action'
 description: 'Demo for tutorial'
-author: 'Colby Fayock <hello@colbyfayock.com>'
+author: 'Christian Nogueras'
 
 inputs:
   GITHUB_TOKEN:

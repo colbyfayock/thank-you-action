@@ -7,15 +7,11 @@
     "build": "ncc build src/action.js -o dist"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/colbyfayock/demo-action-pull-request.git"
+    "type": "git"
   },
-  "author": "Colby Fayock <hello@colbyfayock.com>",
+  "author": "Christian Nogueras",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/colbyfayock/demo-action-pull-request/issues"
-  },
-  "homepage": "https://github.com/colbyfayock/demo-action-pull-request#readme",
+  "bugs": {},
   "dependencies": {},
   "devDependencies": {
     "@actions/core": "^1.2.6",
